@@ -986,7 +986,7 @@ class AbstractRobot(ABC):
                      send_traj_cmd = True
                 elif interp_res == TrajectoryTaskRes.trajectory_complete:
                     self._trajectory_valid = True
-                    send_traj_comd = True
+                    send_traj_cmd = True
                     self._active_trajectory = None
                     if len(self._queued_trajectories) > 0:
                         self._active_trajectory = self._queued_trajectories.pop(0)
