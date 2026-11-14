@@ -1857,7 +1857,11 @@ class TrajectoryTask:
 
         if not self._next_called:
             return TrajectoryTaskRes.ready, None, None, 0.0, self._path.max_time, 0
-        
+
+        # Kept on every setpoint, so that a running status gives the progress, not only the final one
+        self._traj_t = t
+        self._traj_waypoint = current_waypoint1
+
         if t > self._path.max_time:
             self._traj_t = t
             self._traj_waypoint = current_waypoint1
